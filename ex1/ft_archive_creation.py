@@ -42,14 +42,14 @@ def main() -> None:
         print("---\n")
         print(new_content)
         print("---")
-        new_filename: str = input("Enter new file name (or empty):")
+        new_filename: str = input("Enter new file name (or empty): ")
         if not new_filename:
             print("Not saving data.")
             return
         new_file: typing.IO[str] | None = None
         try:
-            new_file = open(new_filename, "w")
             print(f"Saving data to '{new_filename}'")
+            new_file = open(new_filename, "w")
             new_file.write(new_content)
             print(f"Data saved in file '{new_filename}'")
         except OSError as e:
